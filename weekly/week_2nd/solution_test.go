@@ -4,7 +4,7 @@ import "testing"
 
 func TestScorePointToGrade(t *testing.T) {
 	var tests = []struct {
-		score   int
+		score    int
 		expected string
 	}{
 		{

@@ -18,18 +18,14 @@ func solution(scores [][]int) string {
 	n := len(scores)
 	result := ""
 
-	for i:=0; i<n; i++ {
+	for i := 0; i < n; i++ {
 		myScore := scores[i][i]
-		sum := myScore
 		max := myScore
 		min := myScore
+		sum := 0
 		sameCnt := 0
 
-		for j:=0; j<n; j++ {
-			if i == j {
-				continue
-			}
-
+		for j := 0; j < n; j++ {
 			score := scores[j][i]
 			sum += score
 
@@ -48,7 +44,7 @@ func solution(scores [][]int) string {
 
 		average := 0
 
-		if ( max == myScore || min == myScore ) && sameCnt == 0  {
+		if (max == myScore || min == myScore) && sameCnt == 1 {
 			sum -= myScore
 			average = sum / (n - 1)
 		} else {
